@@ -12,13 +12,10 @@
 default: &default
   adapter: mysql2
   encoding: utf8mb4
-  charset: utf8mb4
-  collation: utf8mb4_general_ci
+  pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
   username: root
-  password: password
-  host: realworld-db.cgzkwjj9sfkk.ap-northeast-1.rds.amazonaws.com
-  pool: 5
-  timrout: 5000
+  password:
+  host: localhost
 
 development:
   <<: *default
@@ -54,3 +51,6 @@ test:
 production:
   <<: *default
   database: realworld_production
+  username: root
+  password: <%= Rails.application.credentials.db[:password] %>
+  host: <%= Rails.application.credentials.db[:hostname] %>
