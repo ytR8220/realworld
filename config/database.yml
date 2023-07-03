@@ -12,10 +12,13 @@
 default: &default
   adapter: mysql2
   encoding: utf8mb4
-  pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
+  charset: utf8mb4
+  collation: utf8mb4_general_ci
   username: root
-  password: 0802
-  socket: /tmp/mysql.sock
+  password: password
+  host: realworld-db.cgzkwjj9sfkk.ap-northeast-1.rds.amazonaws.com
+  pool: 5
+  timrout: 5000
 
 development:
   <<: *default
@@ -50,6 +53,4 @@ test:
 #
 production:
   <<: *default
-  database: railstest_production
-  username: railstest
-  password: <%= ENV["RAILSTEST_DATABASE_PASSWORD"] %>
+  database: realworld_production
