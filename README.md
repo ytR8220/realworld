@@ -1,5 +1,5 @@
 # Realworld のデプロイ版です。
 
-[Realworld](https://yto-tutorial.com/)
+[Realworld](http://yto-tutorial.com/)
 
 ![アーキテクチャ図](/infra.png)
