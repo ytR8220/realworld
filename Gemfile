@@ -57,3 +57,6 @@ group :production do
   gem "mysql2"
   gem "unicorn"
 end
+
+gem "sentry-ruby"
+gem "sentry-rails"
