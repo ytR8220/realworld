@@ -32,7 +32,7 @@ class Api::UsersController < ApplicationController
       render json: { 
         user: { 
           email: @user.email, 
-          token: token, 
+          token: @token, 
           username: @user.username, 
           bio: @user.bio, 
           image: @user.image
